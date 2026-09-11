@@ -1,14 +1,34 @@
 {% extends 'emails/layout.html.twig' %}
 
 {% block body %}
-    <p>{% trans %}hi{% endtrans %} {{ user.name }}!</p>
-    <p>{% trans %}you_are_successfully_registered{% endtrans %}</p>
-    <p>{% trans %}to_confirm_your_email_follow_the_link{% endtrans %}</p>
+    <p>
+        {% trans %}hi{% endtrans %}
+        {{ user.name }}!
+    </p>
 
-    <table class="btn btn-primary">
-        <tr>
-            <td><a href="{{ url }}" target="_blank">{{ url }}</a></td>
-        </tr>
+    <p>
+        {% trans %}you_are_successfully_registered{% endtrans %}
+    </p>
+
+    <p>
+        {% trans %}to_confirm_your_email_follow_the_link{% endtrans %}
+    </p>
+
+    <table class="btn btn-primary" role="presentation">
+        <tbody>
+            <tr>
+                <td>
+                    <a
+                        href="{{ url }}"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        {{ url }}
+                    </a>
+                </td>
+            </tr>
+        </tbody>
     </table>
+
     <p>{% trans %}thanks{% endtrans %}</p>
 {% endblock %}
